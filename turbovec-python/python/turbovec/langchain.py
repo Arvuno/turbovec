@@ -458,7 +458,7 @@ class TurboQuantVectorStore(VectorStore):
     # Method names match the InMemoryVectorStore reference (`dump`/`load`),
     # but the on-disk layout is a folder containing the binary index file
     # plus a JSON side-car (we can't embed the binary Rust index in a
-    # single JSON file the way the reference does with its raw-vector
+    # single JSON file the way the reference does with it's raw-vector
     # store).
 
     def dump(self, folder_path: str | Path) -> None:
@@ -467,7 +467,7 @@ class TurboQuantVectorStore(VectorStore):
         ``folder_path`` is a directory; turbovec writes ``index.tvim``
         and ``docstore.json`` inside it. Document metadata must be
         JSON-serializable (same constraint as ``InMemoryVectorStore``).
-        A lazy uncommitted index encodes its state via the index file's
+        A lazy uncommitted index encodes it's state via the index file's
         own ``dim = 0`` sentinel; no special-case handling needed here.
         """
         folder = Path(folder_path)

@@ -199,7 +199,7 @@ def main():
           f"= {min(127, 65535 // (2 * n_byte_groups))}")
     print(f"ARM cap: 127")
     run(dim, n_vectors=200, max_lut=min(127, 65535 // (2 * n_byte_groups)), lut_distribution="uniform")
-    # And ARM at its own cap
+    # And ARM at it's own cap
     run(dim, n_vectors=200, max_lut=127, lut_distribution="uniform")
 
     # Sweep 2: force x86 to use the ARM cap (max_lut=127) — does ARM math match

@@ -70,7 +70,7 @@ def _split_persist_base(persist_path: str | Path) -> Path:
     binary index and JSON side-car can sit next to each other under a
     shared base. We then append our own extensions in persist / load."""
     p = Path(persist_path)
-    # Use the path without its suffix so both .tvim and .nodes.json share
+    # Use the path without it's suffix so both .tvim and .nodes.json share
     # a base. If the input has no suffix (e.g. a bare folder-like name),
     # use it as-is.
     return p.with_suffix("") if p.suffix else p
@@ -554,7 +554,7 @@ class TurboQuantVectorStore(BasePydanticVectorStore):
     # ---- Config serialization ---------------------------------------------
 
     def to_dict(self, **_: Any) -> dict[str, Any]:
-        """Serialize the store's *configuration* (not its data) so a
+        """Serialize the store's *configuration* (not it's data) so a
         fresh instance can be reconstructed via ``from_dict``. Mirrors
         the contract of ``SimpleVectorStore.to_dict`` — config-only;
         node data round-trips through ``persist`` / ``from_persist_path``.

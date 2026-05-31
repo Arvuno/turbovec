@@ -208,7 +208,7 @@ class TurboQuantDocumentStore:
                 f"expected 2D embedding batch, got {vectors.ndim}D"
             )
         # IdMapIndex.add_with_ids handles both eager (dim must match) and
-        # lazy (locks dim on first call) cases. Surface its mismatch
+        # lazy (locks dim on first call) cases. Surface it's mismatch
         # panic as a clean ValueError for parity with previous behaviour.
         existing_dim = self._index.dim
         if existing_dim is not None and vectors.shape[1] != existing_dim:
